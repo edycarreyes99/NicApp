@@ -37,13 +37,13 @@ export class TutorialPage {
             image: 'assets/icon/Logotipo.png',
           },
           {
-            title: values.TUTORIAL_SLIDE2_TITLE,
-            description: values.TUTORIAL_SLIDE2_DESCRIPTION,
+            title: 'Que es NicApp?',
+            description: 'Quieres conocer Nicaragua, hospedarte en hoteles, hacer compras en tiendas, supermercados, ir a un bar, restaurantes, comprar algun producto nacional?. NicApp te facilita todo esto para ti, te mostramos todos sus sitios turisticos, sus pequenos, medianos y grandes negocios con una mayor interaccion utilizando la realidad aumentada.',
             image: 'assets/img/ica-slidebox-img-2.png',
           },
           {
-            title: values.TUTORIAL_SLIDE3_TITLE,
-            description: values.TUTORIAL_SLIDE3_DESCRIPTION,
+            title: '',
+            description: 'La mejor aplicacion para encontrar todo lo que buscas en Nicaragua.',
             image: 'assets/img/ica-slidebox-img-3.png',
           }
         ];
