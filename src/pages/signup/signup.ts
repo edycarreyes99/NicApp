@@ -4,6 +4,8 @@ import { IonicPage, NavController, ToastController, AlertController } from 'ioni
 
 import { ServicioService } from "../../servicio.service";
 
+import { AngularFireDatabase } from "angularfire2/database";
+
 import { User } from '../../providers';
 import { MainPage } from '../';
 
@@ -32,7 +34,8 @@ export class SignupPage {
     public toastCtrl: ToastController,
     public translateService: TranslateService,
     public servicio: ServicioService,
-    public alert: AlertController
+    public alert: AlertController,
+    public db: AngularFireDatabase
     ) {
 
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
@@ -53,6 +56,13 @@ export class SignupPage {
     }else{
       this.servicio.registerUser(this.account.email,this.account.password).then((res)=>{
         this.navCtrl.push(MainPage);
+        this.db.database.ref(`Usuarios/${this.account.name}`).push({
+          Email:this.account.email,
+          Nombre:this.account.name,
+          Sexo: this.sexo,
+          Telefono:this.account.telefono,
+          Password:this.account.password
+        });
       }).catch((err)=>{
         console.log(err);
         if(err.message=='The email address is badly formatted.'){
