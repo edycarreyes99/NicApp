@@ -13,19 +13,25 @@
     <img style="height: 200px; margin: auto; width: 200px;" src="../..//assets/imgs/signup/signup.png">
 
     <ion-card-content>
-      <form (submit)="doSignup()">
+      <form>
         <ion-list>
 
           <ion-item>
-            <ion-label floating>{{ 'NAME' | translate }}</ion-label>
-            <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+            <ion-label floating>Nombres</ion-label>
+            <ion-input type="text" [(ngModel)]="account.nombres" name="nombres"></ion-input>
           </ion-item>
-
           <ion-item>
-            <ion-label floating>{{ 'EMAIL' | translate }}</ion-label>
+            <ion-label floating>Apellidos</ion-label>
+            <ion-input type="text" [(ngModel)]="account.apellidos" name="apellidos"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Correo Electronico</ion-label>
             <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
           </ion-item>
-
+          <ion-item>
+            <ion-label floating>Nombre de Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+          </ion-item>
           <!--
       Want to use a Username instead of an Email? Here you go:
       <ion-item>
@@ -42,24 +48,30 @@
             <ion-label floating>Numero de Telefono (Opcional)</ion-label>
             <ion-input type='text' [(ngModel)]='account.telefono' name='telefono'></ion-input>
           </ion-item>
-            <ion-list padding-top padding-bottom>
-              <ion-item>
-                <ion-label>Sexo</ion-label>
-                <ion-select [(ngModel)]="sexo" name='sexo'>
-                  <ion-option value="Masculino">Masculino</ion-option>
-                  <ion-option value="Femenino">Femenino</ion-option>
-                </ion-select>
-              </ion-item>
-            </ion-list>
+          <ion-list padding-top padding-bottom>
+            <ion-item>
+              <ion-label>Sexo</ion-label>
+              <ion-select [(ngModel)]="sexo" name='sexo'>
+                <ion-option value="Masculino">Masculino</ion-option>
+                <ion-option value="Femenino">Femenino</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
         </ion-list>
-        <ion-row>
-          <ion-col>
-            <div padding>
-              <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
-            </div>
-          </ion-col>
-        </ion-row>
+
       </form>
+      <ion-row>
+        <ion-col>
+          <div padding>
+            <button (click)='doSignup()' ion-button color="amber" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div padding>
+            <button ion-button (click)='doSignupFacebook()' color='indigo' block>SignUp with Facebook</button>
+          </div>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

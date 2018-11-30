@@ -8,6 +8,8 @@ import { AngularFireDatabase } from "angularfire2/database";
 
 import { User } from '../../providers';
 import { MainPage } from '../';
+import { Facebook,FacebookLoginResponse } from '@ionic-native/facebook';
+import { first } from 'rxjs/operator/first';
 
 @IonicPage()
 @Component({
@@ -19,12 +21,18 @@ export class SignupPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   sexo:string;
-  account: { name: string, email: string, password: string, telefono:string} = {
-    name: '',
+  tipo:string;
+  account: { profilePhoto:string, username:string , nombres: string,apellidos:string, email: string, password: string, telefono:string} = {
+    nombres: '',
     email: '',
     password: '',
-    telefono: ''
+    telefono: '',
+    apellidos: '',
+    profilePhoto:'',
+    username: ''
   };
+
+  tipoRegistro:string;
 
   // Our translated text strings
   private signupErrorString: string;
@@ -35,11 +43,27 @@ export class SignupPage {
     public translateService: TranslateService,
     public servicio: ServicioService,
     public alert: AlertController,
-    public db: AngularFireDatabase
+    public db: AngularFireDatabase,
+    public facebook: Facebook
     ) {
 
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
+    })
+  }
+
+  cambiarTipo(tipo:string){
+    this.tipo = tipo;
+  }
+  doSignupFacebook(){
+    console.log('facebook');
+    this.facebook.login(['email','public_profile']).then((response:FacebookLoginResponse)=>{
+      this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large',[]).then(profile=>{
+        this.account.email = profile['email'];
+        this.account.nombres = profile['first_name'];
+        this.account.profilePhoto = profile['picture_large']['data']['url'];
+        this.account.username = profile['name'];
+      })
     })
   }
 
@@ -56,9 +80,9 @@ export class SignupPage {
     }else{
       this.servicio.registerUser(this.account.email,this.account.password).then((res)=>{
         this.navCtrl.push(MainPage);
-        this.db.database.ref(`Usuarios/${this.account.name}`).push({
+        this.db.database.ref(`Usuarios/${this.account.nombres}`).push({
           Email:this.account.email,
-          Nombre:this.account.name,
+          Nombre:this.account.nombres+this.account.apellidos,
           Sexo: this.sexo,
           Telefono:this.account.telefono,
           Password:this.account.password
