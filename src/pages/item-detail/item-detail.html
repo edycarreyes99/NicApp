@@ -14,15 +14,114 @@
   <div class="item-detail" padding>
     <h2>Catedral de Leon</h2>
     <ion-title padding>Descripcion</ion-title>
-    <p padding>La catedral de leon tambien conocida como bacilica catedral de la asuncion de Leon y "catedra de la luz".
-      Es un templo de culto catolico, sede episcopal de la diosecis de leon, es uno de los edifios mas prominentes de Leon
-      , esta ubicada en la plaza central de Leon. Por su gran valor artistico, cultural e historico, el 28 de Junio de 2011, fue elevada por la unesco a la categoria del patrimonio de la humanidad siendo el segundo en la historia del pais
+    <p padding>La catedral de leon tambien conocida como bacilica catedral de la asuncion de Leon y "catedra de la
+      luz".
+      Es un templo de culto catolico, sede episcopal de la diosecis de leon, es uno de los edifios mas prominentes de
+      Leon
+      , esta ubicada en la plaza central de Leon. Por su gran valor artistico, cultural e historico, el 28 de Junio de
+      2011, fue elevada por la unesco a la categoria del patrimonio de la humanidad siendo el segundo en la historia
+      del pais
     </p>
-    <ion-buttons end>
-        <button ion-button icon-only (click)="addItem()">
-          <ion-icon name="eye"></ion-icon>
+
+
+    <ion-grid>
+      <ion-row>
+        <button ion-button icon-end large clear (click)="startApp()">
+          Imagenes del Lugar
         </button>
+      </ion-row>
+      <ion-row>
+
+        <ion-col col-4 col-auto>
+          <ion-card>
+            <img src="../../assets/imgs/catedral/01.jpg">
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4 col-auto>
+          <ion-card>
+            <img src="../../assets/imgs/catedral/02.jpg">
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4 col-auto>
+          <ion-card>
+
+            <img src="../../assets/imgs/catedral/03.jpg">
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="heart-empty"></ion-icon>
+                  Me Gusta
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-buttons end padding>
+        <button ion-button icon-end large clear (click)="startApp()">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </button>
+      <button ion-button icon-only (click)="addItem()">
+        <p padding>Visualizacion en 360</p>
+        <ion-icon name="eye"></ion-icon>
+      </button>
     </ion-buttons>
-    
   </div>
+
 </ion-content>
