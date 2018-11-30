@@ -1,18 +1,22 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ item.name }}</ion-title>
+  <ion-navbar color='red'>
+    <ion-title>Catedral de Leon</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
+  <div class="item-profile" text-center #profilePic style="background-image:url('../../assets/imgs/imagenes nicaraggua/12.jpg')">
   </div>
 
   <div class="item-detail" padding>
-    <h2>{{item.name}}</h2>
-    <p>{{item.about}}</p>
+    <h2>Catedral de Leon</h2>
+    <ion-title padding>Descripcion</ion-title>
+    <p padding>La catedral de leon tambien conocida como bacilica catedral de la asuncion de Leon y "catedra de la luz".
+      Es un templo de culto catolico, sede episcopal de la diosecis de leon, es uno de los edifios mas prominentes de Leon
+      , esta ubicada en la plaza central de Leon. Por su gran valor artistico, cultural e historico, el 28 de Junio de 2011, fue elevada por la unesco a la categoria del patrimonio de la humanidad siendo el segundo en la historia del pais
+    </p>
   </div>
 </ion-content>
