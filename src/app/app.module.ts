@@ -68,6 +68,15 @@ export function provideSettings(storage: Storage) {
   });
 }
 
+export const FirebaseConfig = {
+    apiKey: "AIzaSyAIBPLFwnGQtelwGnPBAQz30JvDqGB0nlI",
+    authDomain: "nicapp-firecodes.firebaseapp.com",
+    databaseURL: "https://nicapp-firecodes.firebaseio.com",
+    projectId: "nicapp-firecodes",
+    storageBucket: "nicapp-firecodes.appspot.com",
+    messagingSenderId: "831820679547"
+};
+
 @NgModule({
   declarations: [
     MyApp
