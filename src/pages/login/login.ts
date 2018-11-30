@@ -16,10 +16,8 @@ export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { email: string, password: string } = {
-    email: '',
-    password: ''
-  };
+  email:string;
+  password:string;
 
   // Our translated text strings
   private loginErrorString: string;
@@ -39,7 +37,7 @@ export class LoginPage {
 
   // Attempt to login in through our User service
   doLogin() {
-    this.servicio.loginEmail(this.account.email,this.account.password).then((res)=>{
+    this.servicio.loginEmail(this.email,this.password).then((res)=>{
       this.navCtrl.push(MainPage);
     }).catch((err)=>{
       const alerta = this.alert.create({
