@@ -8,6 +8,46 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { Facebook } from "@ionic-native/facebook";
+
+//AngularFire2 Modules Start
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from "angularfire2/storage";
+
+
+//Servicio Service
+import { ServicioService } from "../servicio.service";
+
+//Material Design start
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MAT_DATE_LOCALE
+} from '@angular/material';
 
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
@@ -34,6 +74,15 @@ export function provideSettings(storage: Storage) {
   });
 }
 
+export const FirebaseConfig = {
+    apiKey: "AIzaSyAIBPLFwnGQtelwGnPBAQz30JvDqGB0nlI",
+    authDomain: "nicapp-firecodes.firebaseapp.com",
+    databaseURL: "https://nicapp-firecodes.firebaseio.com",
+    projectId: "nicapp-firecodes",
+    storageBucket: "nicapp-firecodes.appspot.com",
+    messagingSenderId: "831820679547"
+};
+
 @NgModule({
   declarations: [
     MyApp
@@ -41,6 +90,36 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpClientModule,
+
+    AngularFireModule.initializeApp(FirebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule,
+
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatTooltipModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -60,8 +139,11 @@ export function provideSettings(storage: Storage) {
     Items,
     User,
     Camera,
+    ServicioService,
     SplashScreen,
     StatusBar,
+    InAppBrowser,
+    Facebook,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

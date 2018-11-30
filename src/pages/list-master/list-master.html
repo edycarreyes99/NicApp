@@ -1,7 +1,7 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
+  <ion-navbar color='amber'>
+    <ion-title>Categorias</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only (click)="addItem()">
@@ -14,8 +14,8 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let item of currentItems">
+  <ion-list padding>
+    <!--<ion-item-sliding *ngFor="let item of currentItems">
       <button ion-item (click)="openItem(item)">
         <ion-avatar item-start>
           <img [src]="item.profilePic" />
@@ -30,6 +30,306 @@
           {{ 'DELETE_BUTTON' | translate }}
         </button>
       </ion-item-options>
-    </ion-item-sliding>
+    </ion-item-sliding>-->
+    
+    <ion-grid>
+      <ion-row>
+        <button ion-button icon-end large clear (click)="startApp()">
+          Bares y Restaurantes
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-row>
+      <ion-row>
+
+        <ion-col col-4 col-auto>
+          <ion-card>
+            <img src="../../assets/imgs/imgnegocio/baryrestaurante/mirador/portada.jpg">
+
+            <ion-card-content>
+              <p>El Mirador</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4 col-auto>
+          <ion-card>
+            <img src="../../assets/imgs/imgnegocio/baryrestaurante/punto/servicio.jpg">
+
+            <ion-card-content>
+              <p>El Punto</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4 col-auto>
+          <ion-card>
+
+            <img src="../../assets/imgs/imgnegocio/baryrestaurante/sesteo/portada.jpg">
+
+            <ion-card-content>
+              <p>El Sesteo</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+          <button ion-button icon-end large clear (click)="startApp()">
+            Sitios Turisticos
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </ion-row>
+        <ion-row>
+  
+          <ion-col col-4 col-auto>
+            <ion-card>
+              <img src="../../assets/imgs/imagenes nicaraggua/12.jpg">
+  
+              <ion-card-content>
+                <p>Catedral de Leon</p>
+              </ion-card-content>
+  
+              <ion-row>
+                <ion-col>
+                  <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name="hand"></ion-icon>
+                    12 Visitas
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name='text'></ion-icon>
+                    4 Comentarios
+                  </button>
+                </ion-col>
+                <ion-col center text-center>
+                  <ion-note>
+                    <button ion-button color="primary" (click)="openItem()" clear small icon-start> Ver </button>
+                  </ion-note>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+          <ion-col col-4 col-auto>
+            <ion-card>
+              <img src="../../assets/imgs/imagenes nicaraggua/10.jpg">
+  
+              <ion-card-content>
+                <p>Iglesia la Recoleccion</p>
+              </ion-card-content>
+  
+              <ion-row>
+                <ion-col>
+                  <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name="hand"></ion-icon>
+                    12 Visitas
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name='text'></ion-icon>
+                    4 Comentarios
+                  </button>
+                </ion-col>
+                <ion-col center text-center>
+                  <ion-note>
+                    <button ion-button color="primary" clear small icon-start> Ver </button>
+                  </ion-note>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+          <ion-col col-4 col-auto>
+            <ion-card>
+  
+              <img src="../../assets/imgs/imagenes nicaraggua/13.jpg">
+  
+              <ion-card-content>
+                <p>Monumento a Dario</p>
+              </ion-card-content>
+  
+              <ion-row>
+                <ion-col>
+                  <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name="hand"></ion-icon>
+                    12 Visitas
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name='text'></ion-icon>
+                    4 Comentarios
+                  </button>
+                </ion-col>
+                <ion-col center text-center>
+                  <ion-note>
+                    <button ion-button color="primary" clear small icon-start>
+                      Ver
+                    </button>
+                  </ion-note>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <button ion-button icon-end large clear (click)="startApp()">
+          Hoteles
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-row>
+      <ion-row>
+
+        <ion-col col-4 col-auto>
+          <ion-card>
+            <img src="../../assets/imgs/imgnegocio/hoteles/convento/portada.jpg">
+
+            <ion-card-content>
+              <p>El Convento</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4 col-auto>
+          <ion-card>
+            <img src="../../assets/imgs/imgnegocio/hoteles/lula/portada.jpg">
+
+            <ion-card-content>
+              <p>Lula</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4 col-auto>
+          <ion-card>
+
+            <img src="../../assets/imgs/imgnegocio/hoteles/meme/servicio.jpg">
+
+            <ion-card-content>
+              <p>Meme</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name="hand"></ion-icon>
+                  12 Visitas
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  4 Comentarios
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  <button ion-button color="primary" clear small icon-start> Ver </button>
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-list>
 </ion-content>
