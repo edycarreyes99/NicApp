@@ -38,6 +38,19 @@
             <ion-label floating>{{ 'PASSWORD' | translate }}</ion-label>
             <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-label floating>Numero de Telefono (Opcional)</ion-label>
+            <ion-input type='text' [(ngModel)]='account.telefono' name='telefono'></ion-input>
+          </ion-item>
+            <ion-list padding-top padding-bottom>
+              <ion-item>
+                <ion-label>Sexo</ion-label>
+                <ion-select [(ngModel)]="sexo" name='sexo'>
+                  <ion-option value="Masculino">Masculino</ion-option>
+                  <ion-option value="Femenino">Femenino</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
         </ion-list>
         <ion-row>
           <ion-col>
