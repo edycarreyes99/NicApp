@@ -16,6 +16,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from "angularfire2/storage";
 
+
+//Servicio Service
+import { ServicioService } from "../servicio.service";
+
 //Material Design start
 import {
   MatButtonModule,
@@ -133,6 +137,7 @@ export const FirebaseConfig = {
     Items,
     User,
     Camera,
+    ServicioService,
     SplashScreen,
     StatusBar,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },

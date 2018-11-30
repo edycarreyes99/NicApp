@@ -5,7 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { MatDialog } from '@angular/material';
 
 @Injectable()
-export class AuthService {
+export class ServicioService {
   constructor(
     public afAuth: AngularFireAuth,
     private af: AngularFireDatabase,
