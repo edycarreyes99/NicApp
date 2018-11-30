@@ -84,6 +84,13 @@ export const FirebaseConfig = {
   imports: [
     BrowserModule,
     HttpClientModule,
+
+    AngularFireModule.initializeApp(FirebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
