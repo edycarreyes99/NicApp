@@ -9,28 +9,22 @@ import { Settings } from '../providers';
 
 @Component({
   template: `<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Pages</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-  <ion-content>
-      <ion-item class="background-profile" color="positive" menuClose="" on-click="goToCameraTabDefaultPage()" id="side-menu21-list-item8">
-          <ion-avatar item-center>
-              <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile">
-          </ion-avatar>
-          <h2 class="text-white">
-              Edycar Reyes
-          </h2>
-          <h4 class="text-white">
-              edycarreyes@gmail.com
-          </h4>
-      </ion-item>
+    <ion-content>
       <ion-list>
-          <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-              {{p.title}}
-          </button>
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
       </ion-list>
-  </ion-content>
+    </ion-content>
 
-</ion-menu>
-<ion-nav #content [root]="rootPage"></ion-nav>`
+  </ion-menu>
+  <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
   rootPage = FirstRunPage;
@@ -39,16 +33,16 @@ export class MyApp {
 
   pages: any[] = [
     { title: 'Tutorial', component: 'TutorialPage' },
-    { title: 'Welcome', component: 'WelcomePage' },
-    { title: 'Tabs', component: 'TabsPage' },
-    { title: 'Cards', component: 'CardsPage' },
-    { title: 'Content', component: 'ContentPage' },
-    { title: 'Login', component: 'LoginPage' },
-    { title: 'Signup', component: 'SignupPage' },
-    { title: 'Master Detail', component: 'ListMasterPage' },
+    { title: 'Bienvenido', component: 'WelcomePage' },
+    { title: 'Pestañas', component: 'TabsPage' },
+    { title: 'Tarjetas', component: 'CardsPage' },
+    { title: 'Contenido', component: 'ContentPage' },
+    { title: 'Iniciar Sesion', component: 'LoginPage' },
+    { title: 'Registrate', component: 'SignupPage' },
+    { title: 'Lista Maestra', component: 'ListMasterPage' },
     { title: 'Menu', component: 'MenuPage' },
-    { title: 'Settings', component: 'SettingsPage' },
-    { title: 'Search', component: 'SearchPage' }
+    { title: 'Configuracion', component: 'SettingsPage' },
+    { title: 'Buscar', component: 'SearchPage' }
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
