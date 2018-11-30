@@ -62,6 +62,13 @@ export class SignupPage {
             message: 'El Email esta mal Formateado, favor corregirlo'
           });
           alerta.present();
+        }else{
+          const alerta = this.alert.create({
+            title: 'Error',
+            subTitle: 'Ha ocurrido un Error',
+            message: err
+          });
+          alerta.present();
         }
       });
     }
