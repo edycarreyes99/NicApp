@@ -8,7 +8,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { Facebook } from "@ionic-native/facebook";
 
 //AngularFire2 Modules Start
@@ -142,6 +142,7 @@ export const FirebaseConfig = {
     ServicioService,
     SplashScreen,
     StatusBar,
+    InAppBrowser,
     Facebook,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
