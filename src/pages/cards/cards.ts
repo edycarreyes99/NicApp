@@ -8,8 +8,36 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class CardsPage {
   cardItems: any[];
+  turismo: any[];
+  negocios: any[];
+  hoteles: any[];
 
   constructor(public navCtrl: NavController) {
+    this.turismo = [
+      {
+        ubicacion: {
+          latitud: '12.4349922',
+          longitud: '-86.8803002'
+        },
+        profilePhotoUrl: '',
+        valoracion: 4.7,
+        numeroTelefonico: 23114820,
+        categoria: 'Turistico',
+        precios: {
+          estudiantes: 20,
+          extranjeros: 5,
+          nacionales: 50
+        },
+        horariosAtencion: {
+          'Lunes-Viernes': '9AM - 4PM'
+        },
+        email: '',
+        descripcion: '',
+        nombre: 'Catedral de Leon',
+        sitioweb: '',
+        image360:''
+      }
+    ]
     this.cardItems = [
       {
         user: {
