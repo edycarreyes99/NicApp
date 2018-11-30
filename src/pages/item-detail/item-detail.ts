@@ -21,7 +21,7 @@ export class ItemDetailPage {
       zoom:'no'
 
     }
-    const navegador = this.browser.create('https://kingames.000webhostapp.com','_system',options);
+    const navegador = this.browser.create('https://nicapp-firecodes.firebaseapp.com/','_system',options);
   }
 
 }
