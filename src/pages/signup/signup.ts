@@ -63,6 +63,10 @@ export class SignupPage {
         this.account.nombres = profile['first_name'];
         this.account.profilePhoto = profile['picture_large']['data']['url'];
         this.account.username = profile['name'];
+        const alerta = this.alert.create({
+          title: 'Datos de Facebook',
+          message:`${this.account.nombres}`
+        })
       })
     })
   }
